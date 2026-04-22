@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="bg-orb orb-left" aria-hidden="true"></div>
+    <div class="bg-orb orb-right" aria-hidden="true"></div>
+
+    <main class="app-shell">
+        <section class="chat-panel">
+            <header class="chat-header">
+                <div class="brand-mark" aria-hidden="true">CS</div>
+                <div>
+                    <h1>Support Assistant</h1>
+                    <p>Ask about orders, returns, refunds, and account issues.</p>
+                </div>
+            </header>
+
+            <div id="response" class="response-container" aria-live="polite">
+                <article class="message message-bot">
+                    <div class="bubble">
+                        Hi, I am here to help. Tell me what you need and I will assist you step by step.
+                    </div>
+                </article>
+            </div>
+
+            <form id="chat-form" class="chat-form">
+                <label class="sr-only" for="question">Your message</label>
+                <input type="text" id="question" placeholder="Type your question..." required>
+                <button type="submit">Send</button>
+            </form>
+
+            <p class="helper-text">Tip: include your order context for faster help.</p>
+        </section>
+    </main>
+
+    <template id="message-template">
+        <article class="message">
+            <div class="bubble"></div>
+        </article>
+    </template>
+
+    <script src="/static/script.js"></script>
+    <script>
+        document.getElementById("question").focus();
+    </script>
+    <noscript>
+        <p style="text-align:center;">This page requires JavaScript to chat with the assistant.</p>
+    </noscript>
+</body>
+</html>
